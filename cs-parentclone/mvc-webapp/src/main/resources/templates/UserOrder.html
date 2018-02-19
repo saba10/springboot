@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="/UserHeader"></th:block>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Mobiles.html">Mobiles</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Laptops.html">Laptops</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Clothing.html">Clothing</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Bags.html">Bags</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Shoes.html">Shoes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br/><br/><br/><br/><br/>
+				<table width="800" align="center">
+					<tr>
+						<th>Order Number</th>
+						<th>Status</th>
+						<th>Product ID</th>
+						<th>Product Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+					</tr>
+					<tr><th></th></tr>
+					<tr th:each="ord : ${orderInfo}">
+					<tr th:each="orddetails : ${ord.orderDetails}">
+						<td align="left"><span th:utext="${ord.orderId}"></span></td>
+						<td align="left"><span th:utext="${ord.status}"></span></td>
+						<td align="left"><span th:utext="${orddetails.productId}"></span></td>
+						<td align="left"><span th:utext="${orddetails.productName}"></span></td>
+						<td align="left"><span th:utext="${orddetails.price}"></span></td>
+						<td align="left"><span th:utext="${orddetails.quantity}"></span></td>
+						</tr>
+
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<th:block th:include="/_footer"></th:block>
+</body>
+</html>

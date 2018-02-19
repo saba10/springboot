@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Admin Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="AdminHeader"></th:block>
+		<table width="800" height="200" align="center">
+					<tr>
+						<th>Order Number</th>
+						<th>User Id</th>
+						<th>Status</th>
+						<th>Product ID</th>
+						<th>Product Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+					</tr>			
+					<tr th:each="ord : ${orderInfo}">
+					<tr th:each="orddetails : ${ord.orderDetails}">
+						<td align="left"><span th:utext="${ord.orderId}"></span></td>
+						<td align="left"><span th:utext="${ord.userId}"></span></td>
+						<td align="left"><span th:utext="${ord.status}"></span></td>
+						<td align="left"><span th:utext="${orddetails.productId}"></span></td>
+						<td align="left"><span th:utext="${orddetails.productName}"></span></td>
+						<td align="left"><span th:utext="${orddetails.price}"></span></td>
+						<td align="left"><span th:utext="${orddetails.quantity}"></span></td>
+						<td align="center"><a class="cart_quantity_delete" th:href="@{/updateorderList(orderId=${ord.orderId}, userId=${ord.userId}, productId=${orddetails.productId}, productName=${orddetails.productName}, price=${orddetails.price}, quantity=${orddetails.quantity})}"><img th:src="@{images/tick.png}" width="10" height="10" alt="tick"></img></a></td>
+						<td align="center"><a class="cart_quantity_delete"><img th:src="@{images/wrong.jpg}" width="10" height="10" alt="wrong"></img></a></td>
+						</tr>
+					</tr>
+				</table>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

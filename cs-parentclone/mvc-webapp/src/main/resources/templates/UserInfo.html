@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="/UserHeader"></th:block>
+	<br/><br/><br/><br/><br/>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Mobiles.html">Mobiles</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Laptops.html">Laptops</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Clothing.html">Clothing</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Bags.html">Bags</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Shoes.html">Shoes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<table height="210" width="500" align="center">
+				<tr></tr><tr></tr><tr></tr>
+					<tr>
+						<th>User Id</th><th>:</th>
+						<th th:utext="${userinfo.userId}"></th>
+					</tr>
+					<tr>
+						<th>First Name</th><th>:</th>
+						<th th:utext="${userinfo.firstName}"></th>
+					</tr>
+					<tr>
+						<th>Last Name</th><th>:</th>
+						<th th:utext="${userinfo.lastName}"></th>
+					</tr>
+					<tr>
+						<th>Email</th><th>:</th>
+						<th th:utext="${userinfo.userName}"></th>
+					</tr>
+					<tr>
+						<th>Balance</th><th>:</th>
+						<th th:utext="${userinfo.balance}"></th>
+						<th>
+						<div class="logo pull-right">
+						<a href="/addGiftCard" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add Gift Card</a>
+						</div></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+   <br/><br/><br/><br/><br/><br/><br/>
+	<th:block th:include="/_footer"></th:block>
+</body>
+</html>

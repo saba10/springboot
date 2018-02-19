@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="HomeHeader"></th:block>
+	<div class="container text-center">
+		<div class="logo-404">
+			<a href="/home1"><img th:src="@{/images/logo.jpg}"/></a>
+		</div>
+		<div class="content-404">
+			<h1>
+				<b>OOPS!!!</b> We Couldn’t Find this Page
+			</h1>
+			<h2>
+				<a href="/home1">Bring me back Home</a>
+			</h2>
+		</div>
+	</div>
+	<br/><br/><br/><br/><br/>
+	
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

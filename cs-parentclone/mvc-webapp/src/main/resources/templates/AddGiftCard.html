@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="UserHeader"></th:block>
+	<br/><br/><br/><br/><br/><br/><br/>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Mobiles.html">Mobiles</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Laptops.html">Laptops</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Clothing.html">Clothing</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Bags.html">Bags</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Shoes.html">Shoes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br/><br/>
+				<table width="400" align="center">
+				<tr><th>Gift Card ID</th><th>Gift Card Value</th></tr>
+				<tr th:each="giftcard : ${giftcards}">
+						<td align="left"><span th:utext="${giftcard.giftCardId}"></span></td>
+						<td align="left"><span th:utext="${giftcard.giftCardValue}"></span></td>
+						<td align="center"><a class="cart_quantity_delete" th:href="@{addgiftcardresponse(userId=${userId},price=${giftcard.giftCardValue})}"><img th:src="@{images\tick.png}" width="10" height="10" alt="Delete"></img></a></td>
+				</tr>
+				<tr></tr>
+				</table>
+				
+			</div>
+		</div>
+	</section>
+	<br/><br/><br/><br/><br/>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

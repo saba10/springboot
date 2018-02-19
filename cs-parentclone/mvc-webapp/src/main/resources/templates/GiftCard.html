@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Gift Card</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="UserHeader"></th:block>
+	<br/><br/><br/><br/><br/><br/>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Mobiles.html">Mobiles</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Laptops.html">Laptops</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Clothing.html">Clothing</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Bags.html">Bags</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Shoes.html">Shoes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="logo pull-right">
+					<a href="/addGiftCard" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add Gift Card</a>
+				</div>
+				<br/><br/><br/><br/>
+				<div class="logo pull-center">
+				<table height="100" width="200" align="center">
+					<tr>
+						<th>GiftCard Id   : </th>
+						<th th:utext="${giftcard.giftCardId}"></th>
+					</tr>
+					<tr>
+						<th>GiftCard Value:</th>
+						<th th:utext="${giftcard.giftCardValue}"></th>
+					</tr>
+				</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<br/><br/><br/><br/><br/><br/>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

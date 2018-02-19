@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="UserHeader"></th:block>
+	<br/><br/><br/>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Mobiles.html">Mobiles</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Laptops.html">Laptops</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Clothing.html">Clothing</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Bags.html">Bags</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Shoes.html">Shoes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="logo pull-right">
+					<a th:href="@{/clearcart}+'?name='+ ${userId}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Clear the Cart</a>
+				</div>
+				<table width="600" align="center" border="4">
+					<tr>
+						<th>Customer Name</th>
+						<th>Product ID</th>
+						<td><b>Quantity</b></td>
+						<td><b>Price</b></td>
+						<th align="right">Pay</th>
+						<th align="center">Cancel</th>
+					</tr>
+					<tr></tr>
+					<tr th:each="cartinfo : ${UserCartModel.cartItemList}">
+						<td align="left"><span th:utext="${UserCartModel.userId}"></span></td>
+						<td align="left"><span th:utext="${cartinfo.productId}"></span></td>
+						<td align="left"><span th:utext="${cartinfo.quantity}"></span></td>
+						<td align="left"><span th:utext="${cartinfo.price}"></span></td>
+						<td align="center"><a class="cart_quantity_delete" th:href="@{/checkout(uid=${UserCartModel.userId},pid=${cartinfo.productId},qua=${cartinfo.quantity},price=${cartinfo.price})}"><img th:src="@{images/tick.png}" width="10" height="10" alt="tick"></img></a></td>
+						<td align="center"><a class="cart_quantity_delete" th:href="@{/deletefromcart} + '?id='+ ${cartinfo.productId}"><img th:src="@{images/wrong.jpg}" width="10" height="10" alt="wrong"></img></a></td>
+					</tr>
+				</table>
+				
+			</div>
+		</div>
+	</section>
+	<br/><br/><br/>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css}" />
+</head>
+<body>
+<header id="header">
+		<div class="header-middle">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="/home"><img th:src="@{/images/logo.jpg}" /></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="/adminlogin"><i class="fa fa-lock"></i>Admin Login</a></li>
+								<li><a href="/loginauth"><i class="fa fa-lock"></i> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<header id="header">
+		<div class="header-bottom">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+						<form action="/search1">
+						<input name="key" placeholder="Search" type="text" />
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Mobiles.html">Mobiles</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Laptops.html">Laptops</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Clothing.html">Clothing</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Bags.html">Bags</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Shoes.html">Shoes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-9 padding-right">
+					<div class="features_items">
+						<h2 class="title text-center">Featured Items</h2>
+							<div class="col-sm-4">
+								<div class="product-image-wrapper">
+									<div class="">
+										<div class="productinfo text-center">
+											<p th:utext="${catalog.id}"></p>
+											<h2 th:utext="${catalog.name}"></h2>
+											<p th:utext="${catalog.price}"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+				<table>
+					<tr><th>User ID</th><th>Ratings</th><th>Feedback</th></tr>
+					<tr></tr>
+					<tr th:each="productFeedback : ${productFeedbacks}">
+						<td align="left"><span th:utext="${productFeedback.userId}"></span></td>
+						<td align="left"><span th:utext="${productFeedback.rating}"></span></td>
+						<td align="left"><span th:utext="${productFeedback.feedback}"></span></td>
+						<tr></tr>
+					</tr>
+					</th:block>				
+				</table>
+			</div>
+		</div>
+	</section>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

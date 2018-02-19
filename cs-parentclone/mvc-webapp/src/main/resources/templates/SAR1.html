@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="AdminHeader"></th:block>
+	<header id="header">
+		<div class="header-bottom">
+			<div class="container">
+				<div class="row">
+						<div class="search_box pull-center">
+							<form action="">
+								<table>
+									<tr>
+										<th>Search By User ID:</th>
+										<th><input type="text" name="userId" required="required"
+											placeholder="Enter the User ID" /></th>
+										<th><input type="submit" value="Search" /></th>
+									</tr>
+								</table>
+							</form>
+						</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<table border="2" width="600" align="center">
+		<tr > 
+			<td align="center"><b>Timestam</b></td>
+			<td align="center"><b>UserId</b></td>
+			<td align="center"><b>UserUrl</b></td>
+		</tr>
+		<tr th:each="sar1 : ${sar}">
+			<td align="left"><span th:utext="${sar1.timestam}"></span></td>
+			<td align="left"><span th:utext="${sar1.userId}"></span></td>
+			<td align="left"><span th:utext="${sar1.userUrl}"></span></td>
+		</tr>
+	</table>
+	<br/><br/><br/><br/>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

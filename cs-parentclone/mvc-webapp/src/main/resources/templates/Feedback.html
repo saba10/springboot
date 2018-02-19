@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="UserHeader"></th:block>
+	<br/><br/><br/><br/><br/><br/><br/>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Mobiles.html">Mobiles</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Laptops.html">Laptops</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Clothing.html">Clothing</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Bags.html">Bags</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Shoes.html">Shoes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br/><br/>
+				<form action="/feedbackresponse" id="feedbackform" method="post">
+					<table width="400" >
+						<tr><th>User ID</th><th>:</th><td><input type="text" name="userId" readonly="readonly" th:value="${userId}" /></td></tr>
+						<tr><th>Product ID</th><th>:</th><td><input type="text" name="productId" readonly="readonly" th:value="${productId}" /></td></tr>
+						<tr><th>Ratings</th><th>:</th><th><input type="number" name="ratings"/></th></tr>
+						<tr><th>FeedBack</th><th>:</th><th><textarea rows="4" cols="50" name="feedback" form="feedbackform"></textarea></th></tr>
+						<tr><th></th><th></th><th><input type="submit" value="Submit"/></th></tr>
+					</table>
+				</form>
+				
+			</div>
+		</div>
+	</section>
+	<br/><br/><br/><br/><br/>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

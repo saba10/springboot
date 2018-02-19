@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="AdminHeader"></th:block>
+
+				
+				<table width="400" align="center">
+				<tr><th>Gift Card ID</th><th>Gift Card Value</th></tr>
+				<tr th:each="giftcard : ${giftcards}">
+						<td align="left"><span th:utext="${giftcard.giftCardId}"></span></td>
+						<td align="left"><span th:utext="${giftcard.giftCardValue}"></span></td>
+						<td align="center"><a class="cart_quantity_delete" th:href="@{deletegiftcard(giftCardId=${giftcard.giftCardId},giftCardValue=${giftcard.giftCardValue})}"><img th:src="@{images\wrong.jpg}" width="10" height="10" alt="Delete"></img></a></td>
+				</tr>
+				<tr></tr>
+				<tr><a href="/addadmingiftcard" ><i class="fa fa-shopping-cart"></i>Add Balance</a></tr>
+				</table>
+				
+				
+
+	<br/><br/><br/><br/><br/>
+	<th:block th:include="_footer"></th:block>
+</body>
+</html>

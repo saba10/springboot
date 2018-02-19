@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title>Login | E-Shopper</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css}" />
+</head>
+<body>
+	<header id="header">
+		<div class="header-middle">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="/adminHome"><img th:src="@{/images/logo.jpg}"/></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="/admingetgiftcards"><i class="fa fa-home"></i>
+										Gift Cards List</a></li>
+								<li><a href="/adminHome"><i class="fa fa-home"></i>
+										Home</a></li>
+								<li><a href="orderList.html"><i
+										class="fa fa-crosshairs"></i> Order List</a></li>
+								<li><a href="addProduct.html"><i class="fa fa-shopping-cart"></i>
+										Add Product</a></li>
+								<li><a href="#"><i class="fa fa-user"></i>
+										<div class ="dropdown">
+											<span th:utext="'Hi '+ ${name}"></span>
+											<div class="dropdown-content">
+												<a href="/home">Logout</a>
+											</div>
+										</div> 
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<div class="container">
+				<div class="row">
+				</div>
+			</div>
+		</div>
+	</header>
+</body>
+</html>
