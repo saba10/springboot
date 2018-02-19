@@ -1,0 +1,1 @@
+[{"product_id_parent":"pd12", "product_id_child":"pd12A", "catagory_name":"clothing", "product_name":"shirt", "image_url":"pqr", "price":"200"}, {"product_id_parent":"pd13", "product_id_child":"pd13A", "catagory_name":"electronics", "product_name":"mobile", "image_url":"xyz", "price":"800"}]
