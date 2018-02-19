@@ -8,14 +8,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.capgemini.bean.CustomerFeedback;
+import com.capgemini.bean.GiftCardCatalog;
 import com.capgemini.bean.ProductCatalog;
 import com.capgemini.constant.URLConstants;
 import com.capgemini.service.CatalogService;
-import com.cg.catalog.GiftCardCatalog;
-import com.cg.feedback.CustomerFeedback;
-import com.cg.userprofile.User;
 
 @Service
 public class CatalogServiceImpl implements CatalogService {
@@ -58,8 +59,18 @@ public class CatalogServiceImpl implements CatalogService {
 
 	@Override
 	public List<CustomerFeedback> getProductDetails(String productId) {
+		/*return restTemplate.getForEntity("http://feedback-rating/getbypid?productId="+productId, responseType, uriVariables)*/
+		
+		/*List<CustomerFeedback> customerFeedback=new ArrayList<>();
+		
+		CustomerFeedback[] responseEntity = restTemplate.getForEntity("http://feedback-rating/getbypid?productId="+productId, CustomerFeedback[].class).getBody();
+		for (int i = 0; i < responseEntity.length; i++) {
+			customerFeedback.add(responseEntity[i]);
+		}
+		return customerFeedback;*/
+		
 		return restTemplate
-		.exchange("http://feedback-rating/getbypid?productId=" + productId, HttpMethod.GET,
+		.exchange("http://feedback-rating/feedback/getbypid?productId="+productId, HttpMethod.GET,
 				null, new ParameterizedTypeReference<List<CustomerFeedback>>() {
 				})
 		.getBody();

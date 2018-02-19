@@ -33,13 +33,13 @@
 								<form action="/checkoutcomplete" method="get">
 									<input type="text" name="uid" readonly="readonly" th:value="${uid}" />
 									<input type="text" name="pid" readonly="readonly" th:value="${pid}" />
-									<input type="number" name="qua" th:value="${qua}" />
-									<input type="number" name="price" readonly="readonly" th:value="${price}" />
-									<input type="email" name="email" placeholder="Email" />
-									<input type="number" name="phone" placeholder="Phone" />
-									<input type="textarea" name="addressLine1" placeholder="Address line1" />
-									<input type="textarea" name="addressLine2" placeholder="Address Line2" />
-									<input type="number" name="pin" placeholder="pin code" />
+									<input type="text" name="price" readonly="readonly" th:value="${price}" />
+									<input type="number" name="qua" required="required" th:value="${qua}" />
+									<input type="email" name="email" required="required" placeholder="Email" />
+									<input type="number" name="phone" required="required" placeholder="Phone" />
+									<input type="text" name="addressLine1" required="required" placeholder="Address line1" />
+									<input type="text" name="addressLine2" required="required" placeholder="Address Line2" />
+									<input type="number" name="pin" required="required" placeholder="pin code" />
 									
 									<br/><br/>
 									    <input type="submit" value="Payment"  style="background-color:orange"/>

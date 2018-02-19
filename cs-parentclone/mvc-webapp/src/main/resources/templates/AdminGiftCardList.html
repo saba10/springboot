@@ -15,10 +15,10 @@
 				<tr th:each="giftcard : ${giftcards}">
 						<td align="left"><span th:utext="${giftcard.giftCardId}"></span></td>
 						<td align="left"><span th:utext="${giftcard.giftCardValue}"></span></td>
-						<td align="center"><a class="cart_quantity_delete" th:href="@{deletegiftcard(giftCardId=${giftcard.giftCardId},giftCardValue=${giftcard.giftCardValue})}"><img th:src="@{images\wrong.jpg}" width="10" height="10" alt="Delete"></img></a></td>
+						<td align="center"><a class="cart_quantity_delete" th:href="@{deletegiftcard(giftCardId=${giftcard.giftCardId})}"><img th:src="@{images\wrong.jpg}" width="10" height="10" alt="Delete"></img></a></td>
 				</tr>
 				<tr></tr>
-				<tr><a href="/addadmingiftcard" ><i class="fa fa-shopping-cart"></i>Add Balance</a></tr>
+				<tr><a href="/addadmingiftcard" ><i class="fa fa-shopping-cart"></i>Add Gift Card</a></tr>
 				</table>
 				
 				

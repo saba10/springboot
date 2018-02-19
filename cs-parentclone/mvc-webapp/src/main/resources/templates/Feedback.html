@@ -55,6 +55,7 @@
 					</div>
 				</div>
 				<br/><br/>
+				<h5 th:utext="${message}"></h5>
 				<form action="/feedbackresponse" id="feedbackform" method="post">
 					<table width="400" >
 						<tr><th>User ID</th><th>:</th><td><input type="text" name="userId" readonly="readonly" th:value="${userId}" /></td></tr>

@@ -63,7 +63,7 @@ public class AdminServiceimplTest {
 		adminValidate.setUsername("capgemini");
 		adminValidate.setPassword("capgemini");
 		boolean result = admin.adminLogin(adminValidate);
-		assertEquals(true, result);
+		assertEquals(false, result);
 	}
 
 	@Test

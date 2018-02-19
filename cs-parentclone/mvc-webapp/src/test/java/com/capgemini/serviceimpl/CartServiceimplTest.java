@@ -17,7 +17,6 @@ import com.capgemini.bean.GiftCard;
 import com.capgemini.bean.OrderEntity;
 import com.capgemini.bean.ProductCatalog;
 import com.capgemini.service.CatalogService;
-import com.cg.catalog.GiftCardCatalog;
 
 /**
  * The class <code>CartServiceimplTest</code> contains tests for the class <code>{@link CartServiceimpl}</code>.
@@ -87,7 +86,7 @@ public class CartServiceimplTest {
 
 	}
 
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testGetAllOrder_1() throws Exception {
 
 		OrderEntity arr1[] = new OrderEntity[1];

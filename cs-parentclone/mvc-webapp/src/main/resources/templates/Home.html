@@ -100,7 +100,8 @@
 								<div class="product-image-wrapper">
 									<div class="">
 										<div class="productinfo text-center">
-											<h2 th:utext="${cat.productName}"></h2>
+											<a th:href="@{/product(productName=${cat.productName},productIdChild=${cat.productIdChild},
+											price=${cat.price})}"><h2 th:utext="${cat.productName}"></h2></a>
 											<p th:utext="'Price: '+${cat.price}"></p>
 											<p th:utext="'Code: '+${cat.productIdChild}"></p>
 											<a href="/loginauth" class="btn btn-default add-to-cart"><i

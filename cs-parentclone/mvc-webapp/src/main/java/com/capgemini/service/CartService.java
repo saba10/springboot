@@ -2,12 +2,12 @@ package com.capgemini.service;
 
 import java.util.List;
 
+import com.capgemini.bean.CustomerFeedback;
 import com.capgemini.bean.GiftCard;
+import com.capgemini.bean.GiftCardCatalog;
 import com.capgemini.bean.OrderEntity;
+import com.capgemini.bean.User;
 import com.capgemini.serviceimpl.UserCartModel;
-import com.cg.catalog.GiftCardCatalog;
-import com.cg.feedback.CustomerFeedback;
-import com.cg.userprofile.User;
 
 public interface CartService {
 
@@ -26,4 +26,5 @@ public interface CartService {
 	public void creditGiftCard(Long id, String value);
 	public User getUserInfo(Long userId);
 	public void debitGiftCard(Long id, String value);
+	public void feedbackStoring(CustomerFeedback customer);
 }

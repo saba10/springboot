@@ -26,6 +26,8 @@ public interface AdminService {
 
 	public void addOrder(OrderEntity order);
 
-	public void deleteProduct(String productId);
+	public String deleteProduct(String productId);
+
+	public String deleteGiftCard(String giftCardId);
 
 }

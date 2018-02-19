@@ -78,16 +78,20 @@
 								<div class="product-image-wrapper">
 									<div class="">
 										<div class="productinfo text-center">
-											<h2 th:utext="${cat.productName}"></h2>
+											<a th:href="@{/productinfo(userId=${userId},productIdChild=${cat.productIdChild},
+											productName=${cat.productName},price=${cat.price})}"><h2 th:utext="${cat.productName}"></h2></a>
 											<p th:utext="'Price: '+${cat.price}"></p>
 											<p th:utext="'Code: '+${cat.productIdChild}"></p>
 											<a th:href="@{/addtocart} + '?id='+ ${cat.productIdChild}" class="btn btn-default add-to-cart"><i
 												class="fa fa-shopping-cart"></i>Add to cart</a>
+												
 										</div>
 									</div>
 									<!-- <div class="choose">
 										<ul class="nav nav-pills nav-justified">
-											<li><a href="#"><i class="fa fa-money"></i>Buy</a></li>
+											<li><a th:href="@{/productinfo(userId=${userId},productIdChild=${cat.productIdChild},
+											catagoryName=${cat.catagoryName},productName=${cat.productName},price=${cat.price})}"><i class="fa fa-money"></i>Details</a></li>
+											 
 										</ul>
 									</div> -->
 								</div>

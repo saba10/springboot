@@ -15,16 +15,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.capgemini.bean.Cart;
+import com.capgemini.bean.CustomerFeedback;
 import com.capgemini.bean.GiftCard;
+import com.capgemini.bean.GiftCardCatalog;
 import com.capgemini.bean.Order;
 import com.capgemini.bean.OrderEntity;
 import com.capgemini.bean.ProductCatalog;
+import com.capgemini.bean.User;
 import com.capgemini.constant.URLConstants;
 import com.capgemini.service.CartService;
 import com.capgemini.service.CatalogService;
-import com.cg.catalog.GiftCardCatalog;
-import com.cg.feedback.CustomerFeedback;
-import com.cg.userprofile.User;
 
 /**
  * @author dimehta
@@ -165,7 +165,8 @@ public class CartServiceimpl implements CartService {
 		restTemplate.postForObject("http://user-profile/users/debit?userId="+id+"&amount="+value, null, User.class);
 	}
 
+	@Override
 	public void feedbackStoring(CustomerFeedback customer) {
-		restTemplate.postForObject("http://feedback-rating/feedback/create", null, CustomerFeedback.class, customer);
+		CustomerFeedback customerFeedback=restTemplate.postForObject("http://feedback-rating/feedback/create", customer, CustomerFeedback.class);
 	}
 }

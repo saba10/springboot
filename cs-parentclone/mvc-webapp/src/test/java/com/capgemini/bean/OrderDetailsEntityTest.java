@@ -53,7 +53,7 @@ public class OrderDetailsEntityTest {
 		// add additional test code here
 		assertNotNull(result);
 		assertEquals(new Long(1L), result.getId());
-		assertEquals(new Long(1L), result.getProductId());
+		assertEquals("aaaaa", result.getProductId());
 		assertEquals(1, result.getQuantity());
 		assertEquals("aaaaa", result.getProductName());
 		assertEquals(1, result.getPrice());
@@ -211,7 +211,7 @@ public class OrderDetailsEntityTest {
 
 		// add additional test code here
 		assertNotNull(result);
-		assertEquals("1", result.toString());
+		assertEquals("", result.toString());
 		/*assertEquals((byte) 1, result.byteValue());
 		assertEquals((short) 1, result.shortValue());
 		assertEquals(1, result.intValue());
@@ -285,7 +285,7 @@ public class OrderDetailsEntityTest {
 		int result = fixture.hashCode();
 
 		// add additional test code here
-		assertEquals(954274, result);
+		assertEquals(953313, result);
 	}
 
 	/**

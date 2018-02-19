@@ -83,10 +83,17 @@ public class AdminServiceimpl implements AdminService {
 	public void addOrder(OrderEntity order) {
 		restTemplate.postForObject("http://order-mgmt/orders", order, String.class);
 	}
+	
+	@Override
+	public String deleteProduct(String productId) {
+		String s=restTemplate.postForObject("http://catalog-mgmt/delete/"+productId+"?id="+productId, String.class, String.class);
+		return s;
+	}
 
 	@Override
-	public void deleteProduct(String productId) {
-		System.err.println("http://catalog-mgmt/delete/"+productId+"?id="+productId);
-		restTemplate.postForObject("http://catalog-mgmt/delete/"+productId+"?id="+productId, String.class, null);
+	public String deleteGiftCard(String giftCardId) {
+		System.err.println(giftCardId);
+		String s=restTemplate.postForObject("http://catalog-mgmt/deleteGiftCard/"+giftCardId+"?id="+giftCardId, String.class, String.class);
+		return s;
 	}
 }

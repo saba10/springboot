@@ -23,13 +23,13 @@ import com.capgemini.bean.GiftCard;
 import com.capgemini.bean.OrderEntity;
 import com.capgemini.bean.ProductCatalog;
 import com.capgemini.bean.ShippingBean;
+import com.capgemini.bean.User;
 import com.capgemini.bean.UserBean;
 import com.capgemini.login.social.providers.LinkedInProvider;
 import com.capgemini.service.AdminService;
 import com.capgemini.serviceimpl.CartServiceimpl;
 import com.capgemini.serviceimpl.CatalogServiceImpl;
 import com.capgemini.serviceimpl.UserCartModel;
-import com.cg.userprofile.User;
 
 /**
  * The class <code>WebRequestControllerTest</code> contains tests for the class <code>{@link WebRequestController}</code>.

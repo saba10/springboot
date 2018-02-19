@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
 </head>
 <body>
-	<th:block th:include="/UserHeader"></th:block>
+	<th:block th:include="UserHeader"></th:block>
 	<section>
 		<div class="container">
 			<div class="row">
@@ -18,35 +18,35 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Mobiles.html">Mobiles</a>
+										<a href="/category1?type=mobiles">Mobiles</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Laptops.html">Laptops</a>
+										<a href="/category1?type=laptops">Laptops</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Clothing.html">Clothing</a>
+										<a href="/category1?type=clothing">Clothing</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Bags.html">Bags</a>
+										<a href="/category1?type=bags">Bags</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Shoes.html">Shoes</a>
+										<a href="/category1?type=Electronics">Electronics</a>
 									</h4>
 								</div>
 							</div>
@@ -80,6 +80,6 @@
 		</div>
 	</section>
 	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-	<th:block th:include="/_footer"></th:block>
+	<th:block th:include="_footer"></th:block>
 </body>
 </html>

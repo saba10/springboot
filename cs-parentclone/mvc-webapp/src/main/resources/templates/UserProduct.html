@@ -77,16 +77,16 @@
 								<div class="product-image-wrapper">
 									<div class="">
 										<div class="productinfo text-center">
-											<p th:utext="${catalog.id}"></p>
-											<h2 th:utext="${catalog.name}"></h2>
-											<p th:utext="${catalog.price}"></p>
+											<h2 th:utext="${productCatalog.productName}"></h2>
+											<p th:utext="${productCatalog.productIdChild}"></p>
+											<p th:utext="${productCatalog.price}"></p>
 										</div>
 									</div>
 								</div>
 							</div>
 					</div>
 				</div>
-				<table>
+				<table width="500">
 					<tr><th>User ID</th><th>Ratings</th><th>Feedback</th></tr>
 					<tr></tr>
 					<tr th:each="productFeedback : ${productFeedbacks}">
@@ -99,6 +99,7 @@
 			</div>
 		</div>
 	</section>
+	<br/><br/><br/>
 	<th:block th:include="_footer"></th:block>
 </body>
 </html>

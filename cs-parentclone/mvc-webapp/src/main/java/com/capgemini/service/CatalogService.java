@@ -1,10 +1,10 @@
 package com.capgemini.service;
 
 import java.util.List;
-import com.capgemini.bean.GiftCard;
+
+import com.capgemini.bean.CustomerFeedback;
+import com.capgemini.bean.GiftCardCatalog;
 import com.capgemini.bean.ProductCatalog;
-import com.cg.catalog.GiftCardCatalog;
-import com.cg.feedback.CustomerFeedback;
 
 public interface CatalogService {
 

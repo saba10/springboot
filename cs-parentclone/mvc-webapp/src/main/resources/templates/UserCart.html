@@ -19,35 +19,35 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Mobiles.html">Mobiles</a>
+										<a href="/category1?type=mobiles">Mobiles</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Laptops.html">Laptops</a>
+										<a href="/category1?type=laptops">Laptops</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Clothing.html">Clothing</a>
+										<a href="/category1?type=clothing">Clothing</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Bags.html">Bags</a>
+										<a href="/category1?type=bags">Bags</a>
 									</h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Shoes.html">Shoes</a>
+										<a href="/category1?type=Electronics">Electronics</a>
 									</h4>
 								</div>
 							</div>
@@ -57,6 +57,7 @@
 				<div class="logo pull-right">
 					<a th:href="@{/clearcart}+'?name='+ ${userId}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Clear the Cart</a>
 				</div>
+				<h5 th:utext="${message}"></h5>
 				<table width="600" align="center" border="4">
 					<tr>
 						<th>Customer Name</th>

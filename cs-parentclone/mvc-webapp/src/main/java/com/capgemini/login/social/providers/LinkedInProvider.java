@@ -14,10 +14,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.capgemini.bean.GiftCard;
 import com.capgemini.bean.ProductCatalog;
+import com.capgemini.bean.User;
 import com.capgemini.constant.URLConstants;
 import com.capgemini.serviceimpl.CartServiceimpl;
 import com.capgemini.serviceimpl.CatalogServiceImpl;
-import com.cg.userprofile.User;
 
 /**
  * @author dimehta
@@ -74,9 +74,7 @@ public class LinkedInProvider {
 			user.setBalance(10000L);
 			user = restTemplate.postForObject("http://user-profile/users/add", user, User.class);
 		} else {
-			user.setUserId(list.get(0).getUserId());
-			System.err.println("*******"+user.getBalance());
-			
+			user.setUserId(list.get(0).getUserId());			
 		}
 		return user;
 	}
